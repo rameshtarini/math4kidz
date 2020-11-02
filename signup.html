@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="node_modules/bulma/css/bulma.css" />
+            <link rel="stylesheet" href="signupstyle.css"/>
+            <link href="https://fonts.googleapis.com/css?family=Shrikhand&display=swap" rel="stylesheet">
+
+            <title>Math4Kidz</title>
+
+            <a href="./index.html">Home</a>
+            <a href="./student.html">Student Portal</a>
+            <a href="./signup.html">Sign Up</a>
+            <a href="./teacher.html">Teacher Portal</a>
+        </head>
+
+        <h1 class="title">Sign Up Form</h1>
+        <h6>Whether you're a student or a teacher, 
+            sign up here!</h6>
+        <form method="post" action="./data.js">
+            <div class="field">
+                <label class="label">Email</label>
+                <div class="control">
+                    <input type="text" placeholder="johndoe@email.com" name="username" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Password</label>
+                <div class="control">
+                    <input class="text" type="password" placeholder="password123" name="password">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">First Name</label>
+                <div class="control">
+                    <input type="text" placeholder="John" name="fname" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Last Name</label>
+                <div class="control">
+                    <input type="text" placeholder="Doe" name="lname" required>
+                </div>
+            </div>
+            
+            <div class="field">
+                <label class="label">Account type</label>
+                <div class="control">
+                    <div class="select">
+                        <select name="accountType">
+                            <option>Student</option>
+                            <option>Teacher</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">If Student, Teacher Name</label>
+                <div class="control">
+                    <input type="text" placeholder="Jane Doe" name="tname" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Grade</label>
+                <div class="control">
+                    <input type="number" placeholder="0" name="grade" max="12">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">School</label>
+                <div class="control">
+                    <input type="text" placeholder="Elk Creek Middle" name="school">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">State</label>
+                <div class="control">
+                    <input type="text" placeholder="NC" name="state" maxlength="2">
+                </div>
+            </div>
+
+            <input class="button is-dark" type="submit"/>
+        </form>
+</html>
