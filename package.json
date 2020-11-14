@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/vanesamunoz/COMP426-Final#readme",
   "dependencies": {
-    "bulma": "^0.9.1"
+    "bulma": "^0.9.1",
+    "data-store": "^4.0.3",
+    "express": "^4.17.1"
   }
 }
