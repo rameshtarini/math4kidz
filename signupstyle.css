@@ -9,7 +9,7 @@ body, html{
 
 h1, h6 {
     font-weight: normal;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Sniglet', cursive;
     margin: 0 auto;
     margin-top: 30px;
     width: 500px;
@@ -23,9 +23,8 @@ form{
     padding-top: 40px;
     color: white;
     position: relative;
-    
-    
 }
+
 label, input, textarea{
     display: block; 
 }
