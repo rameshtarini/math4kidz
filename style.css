@@ -25,7 +25,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari */
+    -webkit-backface-visibility: hidden; 
     backface-visibility: hidden;
   }
   
@@ -42,3 +42,72 @@
     transform: rotateY(180deg);
     font-size: 12px;
   }
+
+  /*styling the weather api*/
+
+.containerr{
+  width: 300px;    
+  background-color: rgb(255, 255, 255);
+  
+  display: block;
+  margin: 0 auto;
+  
+  border-radius: 10px;
+  padding-bottom : 50px;
+}
+
+.app-title{
+  width: 300px;
+  height: 50px;
+  border-radius: 10px 10px 0 0;
+  
+}
+
+.app-title h1{
+  text-align: center;
+  padding: 15px;
+  margin: 0 auto;
+  font-size: 1.2em;
+  color: #293251;
+}
+
+
+
+.weather-container{
+  width: 300px;
+  height: 260px;
+  background-color: #F4F9FF;
+}
+
+#weather-icon{
+  width: 300px;
+  height: 128px;
+}
+
+#weather-icon img{
+  display: block;
+  margin: 0 auto;
+}
+
+#temperature-value{
+  width: 300px;
+  height:60px;
+  font-size: 24px;
+  text-align: center;
+}
+
+
+
+#temperature-description{
+  text-align: center;
+  font-size: 1.2em;
+  
+}
+
+
+#location{
+  text-align: center;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+

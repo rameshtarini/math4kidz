@@ -7,6 +7,8 @@
         <link rel="stylesheet" href="node_modules/bulma/css/bulma.css" />
         <link rel="stylesheet" href="style.css"/>
         <link href="https://fonts.googleapis.com/css?family=Shrikhand&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="api.js"></script>
 
     <title>Math4Kidz</title>
 
@@ -113,11 +115,17 @@
                                 </div>
                               </div>
                         </div>
-                        <div class="column">
-                            <h1 class="title">Customer Reviews</h1>
-                            <p>...</p>
-        
+                       
+                        <div class="containerr" class="column">
+                          <div class="app-title"><h1 class="title">Weather</h1></div>
+                            <div class="weather-container">
+                              <div id="weather-icon"></div>
+                              <div id="temperature-value"><p class="tempvalue"></p></div>
+                              <div id="temperature-description"><p></p></div>
+                              <div id="location"><p>-</p></div>
+                            </div>
                         </div>
+                      
                     </div>
                 </div>
             </div>
