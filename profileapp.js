@@ -22,11 +22,11 @@ $(function(){
           firebase.database().ref().child("users").once('value', function (snapshot) {
             snapshot.forEach(function(childSnapshot) {
              if(childSnapshot.val().realID==firebaseUser.uid){
-                let profile = '<h2>' + childSnapshot.val().fName + ' ' + childSnapshot.val().lName + '</h2>'
-                profile += '<div>Grade: ' + childSnapshot.val().realGrade + '</div>'
-                profile += '<div>School: ' + childSnapshot.val().realSchool + '</div>'
-                profile += '<div>State: ' + childSnapshot.val().realState + '</div>'
-                profile += '<div>Score: ' + childSnapshot.val().score + '</div>'
+                let profile = '<h2 class="boxName">'  + childSnapshot.val().fName + ' ' + childSnapshot.val().lName + '</h2>'
+                profile += '<div><img src="https://img.icons8.com/cotton/64/000000/student-male--v1.png"/>Grade: ' + childSnapshot.val().realGrade + '</div>'
+                profile += '<div><img src="https://img.icons8.com/cotton/64/000000/school-backpack--v1.png"/>School: ' + childSnapshot.val().realSchool + '</div>'
+                profile += '<div><img src="https://img.icons8.com/dusk/64/000000/worldwide-location.png"/>State: ' + childSnapshot.val().realState + '</div></br></br>'
+                profile += '<div class="boxName">Score: ' + childSnapshot.val().score + '</div>'
                 $message.html(profile) 
              }
            });
