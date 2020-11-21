@@ -39,6 +39,7 @@ $(function(){
   }
 
     btnLogout.addEventListener('click', e => {
+      $object.html('');
       firebase.auth().signOut();
     }
 
