@@ -1,6 +1,7 @@
 // this loads the math question to start up
 let xGlobal = 0;
 let yGlobal = 0;
+let type = ""
 
 $(function() {
     // Initialize Firebase
@@ -42,11 +43,13 @@ export const handleSubmitButtonPress = function(event)
         location.reload()
         $('#question').replaceWith(displayMath())
         $form.replaceWith(renderResponseForm());
+        type = "has-text-success"
     }
     else 
     {
         $('#question').replaceWith(displayMath())
         $form.replaceWith(renderResponseForm());
+        type = "has-text-danger"
     }
 }
 
@@ -66,7 +69,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
       firebase.database().ref().child("users").once('value', function (snapshot) {
         snapshot.forEach(function(childSnapshot) {
          if(childSnapshot.val().realID==firebaseUser.uid){
-           let scored = '<div> Score: ' + childSnapshot.val().score + '</div>'
+           let scored = '<span class=' + type + '>Score: ' + childSnapshot.val().score + '</span>'
           $('#message').html(scored) 
           let updates = {}
           updates['/users/' + firebaseUser.uid + '/score'] = childSnapshot.val().score + 1;
@@ -74,6 +77,12 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
          }
        });
      }); 
+    }
+    else{
+        let new_message = '<span class="has-text-danger">You are not logged in!</span>'
+        new_message += '<div>Click here to log in and keep track of your skills!<a href="./login.html" class="button is-primary">Log in</a></div>'
+        new_message += '<div>If you do not have an account, click here to make one!<a href="./signup.html" class="button is-primary">Sign up</a></div>'
+        $('#message').html(new_message);
     }
   }
 )

@@ -55,7 +55,7 @@ $(function(){
           firebase.database().ref().child("users").once('value', function (snapshot) {
             snapshot.forEach(function(childSnapshot) {
              if(childSnapshot.val().realID==firebaseUser.uid){
-               let scored = '<div> Score: ' + childSnapshot.val().score + '</div>'
+               let scored = '<div> Score: ' + (Number(childSnapshot.val().score)-1).toString() + '</div>'
               $object.html(scored);
              }
            });

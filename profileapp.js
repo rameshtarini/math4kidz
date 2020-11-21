@@ -28,12 +28,16 @@ $(function(){
                 profile += '<div><img src="https://img.icons8.com/cotton/64/000000/school-backpack--v1.png"/>School: ' + childSnapshot.val().realSchool + '</div>'
                 profile += '<div><img src="https://img.icons8.com/dusk/64/000000/worldwide-location.png"/>State: ' + childSnapshot.val().realState + '</div></br></br>'
                 profile += '<div class="boxName">Score: ' + (Number(childSnapshot.val().score)-1).toString() + '</div>'
+                profile += '<div>Click here to play the game and boost your score!<a href="./game.html" class="button is-primary">Game</a></div>'
                 $message.html(profile) 
              }
            });
          }); 
         } else {
-          $message.html('<span class="has-text-danger">You are not logged in.</span>');
+          let new_message = '<span class="has-text-danger">You are not logged in.</span>'
+          new_message += '<div>Click here to log in and check yourself out!<a href="./login.html" class="button is-primary">Log in</a></div>'
+          new_message += '<div>If you do not have an account, click here to make one!<a href="./signup.html" class="button is-primary">Sign up</a></div>'
+          $message.html(new_message);
         }
       }
 
