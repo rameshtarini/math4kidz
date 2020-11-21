@@ -17,12 +17,17 @@ h1, h6 {
     text-align: center;    
 }
 
-form{
+.field {
     margin: 0 auto;
     width: 500px;
-    padding-top: 40px;
     color: white;
     position: relative;
+}
+
+.button {
+    margin: 0 auto;
+    color: white;
+    text-align: middle;
 }
 
 label, input, textarea{

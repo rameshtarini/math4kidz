@@ -1,11 +1,10 @@
-/*import firebase from './node_modules/firebase';
-require('firebase/auth')*/
-
 $(function(){
 
     const $message = $('#message');
     $message.html('');
 
+    const $object = $('#object');
+    $object.html('');
 
     const config = {
         apiKey: "AIzaSyA8o4q_9Tc8RHKtJGdx178O0TCMMuqvrE4",
@@ -30,9 +29,14 @@ $(function(){
         const pass = txtPassword.value;
         const auth = firebase.auth();
         const promise = auth.signInWithEmailAndPassword(email,pass);
-        promise.catch(e => $message.html('<span class="has-text-danger">'+e.message+'</span>'));
+        promise.catch(e => catchfunc(e));
     }
   )
+
+  function catchfunc(e) {
+    $message.html('<span class="has-text-danger">'+e.message+'</span>'); 
+    $object.html('');
+  }
 
     btnLogout.addEventListener('click', e => {
       firebase.auth().signOut();
@@ -42,40 +46,31 @@ $(function(){
 
     firebase.auth().onAuthStateChanged(firebaseUser => {
         if(firebaseUser){
-          console.log(firebaseUser);
           let new_message = '<span class="has-text-success">You are logged in with '+ firebaseUser.email +'</span>'
           new_message += '<div>Click here to play the game and boost your score!<a href="./game.html" class="button is-primary">Game</a></div>'
           $message.html(new_message);
           btnLogout.classList.remove('hide');
+
+          //HERE IS WHERE I CAN UPDATE THE SCORE use location.reload() to refresh the page
+          firebase.database().ref().child("users").once('value', function (snapshot) {
+            snapshot.forEach(function(childSnapshot) {
+             if(childSnapshot.val().realID==firebaseUser.uid){
+               let scored = '<div> Score: ' + childSnapshot.val().score + '</div>'
+              $object.html(scored) 
+              let updates = {}
+              updates['/users/' + firebaseUser.uid + '/score'] = childSnapshot.val().score + 1;
+              firebase.database().ref().update(updates)
+              childSnapshot.val().score = childSnapshot.val().score + 1;
+             }
+           });
+         }); 
         } else {
-          console.log('not logged in');
           $message.html('<span class="has-text-danger">You are not logged in.</span>');
           btnLogout.classList.add('hide');
         }
       }
 
     )
+
+
 });
-
-
-                
-                /*<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
-
-                // Initialize the FirebaseUI Widget using Firebase.
-            var ui = new firebaseui.auth.AuthUI(firebase.auth());
-
-            ui.start('#firebaseui-auth-container', {
-                signInOptions: [
-                  firebase.auth.EmailAuthProvider.PROVIDER_ID
-                ],
-                // Other config options...
-              });
-
-              ui.start('#firebaseui-auth-container', {
-                signInOptions: [
-                  {
-                    provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
-                    requireDisplayName: false
-                  }
-                ]
-              });*/
