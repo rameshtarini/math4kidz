@@ -16,7 +16,7 @@ axios.get(api)
     el.innerHTML = "<img src=\"http://openweathermap.org/img/wn/02d@2x.png\" >";
     
 
-    console.log(response.data.name)
+    //console.log(response.data.name)
   })
   .catch(function (error) {
     // handle error

@@ -52,16 +52,11 @@ $(function(){
           $message.html(new_message);
           btnLogout.classList.remove('hide');
 
-          //HERE IS WHERE I CAN UPDATE THE SCORE use location.reload() to refresh the page
           firebase.database().ref().child("users").once('value', function (snapshot) {
             snapshot.forEach(function(childSnapshot) {
              if(childSnapshot.val().realID==firebaseUser.uid){
                let scored = '<div> Score: ' + childSnapshot.val().score + '</div>'
-              $object.html(scored) 
-              let updates = {}
-              updates['/users/' + firebaseUser.uid + '/score'] = childSnapshot.val().score + 1;
-              firebase.database().ref().update(updates)
-              childSnapshot.val().score = childSnapshot.val().score + 1;
+              $object.html(scored);
              }
            });
          }); 
