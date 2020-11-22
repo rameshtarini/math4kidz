@@ -13,7 +13,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="node_modules/bulma/css/bulma.css" />
         <link rel="stylesheet" href="signupstyle.css"/>
+        <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet"></link>
         <link href="https://fonts.googleapis.com/css?family=Shrikhand&display=swap" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" ></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         
 
 
@@ -73,13 +77,13 @@
             <div class="field">
                 <label for="tags" class="label">State</label>
                 <div class="control">
-                    <input id="tags" type="text" placeholder="North Carolina" name="state">
+                    <input class="tags" id="search_" type="text" placeholder="North Carolina" name="state">
                 </div>
             </div>
 
             <div class="field">
                 <button id="btnSignUp" class="button is-dark">Sign Up</button>
-            </div>>
+            </div>
 
             <div class="field">
                 <div class="control">
@@ -88,8 +92,10 @@
             </div>
 
 
-        <script src="node_modules/jquery/dist/jquery.js"></script>
+        <!--<script src="node_modules/jquery/dist/jquery.js"></script>-->
         <script type="module" src="signupapp.js"></script>
+        <script type="module" src="autocomplete.js"></script>
+     
 
             
     </body>
