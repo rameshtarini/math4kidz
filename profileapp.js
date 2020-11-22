@@ -20,7 +20,12 @@ $(function(){
     btnLogout.addEventListener('click', e => {
       firebase.auth().signOut();
     }
+    )
 
+    const btnDelete = document.getElementById('btnDelete');
+    btnDelete.addEventListener('click', e => {
+      firebase.auth().currentUser.delete();
+    }
     )
 
 
