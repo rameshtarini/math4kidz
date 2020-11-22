@@ -1,7 +1,6 @@
 // this loads the math question to start up
 let xGlobal = 0;
 let yGlobal = 0;
-let type = ""
 
 $(function() {
     // Initialize Firebase
@@ -43,13 +42,11 @@ export const handleSubmitButtonPress = function(event)
         location.reload()
         $('#question').replaceWith(displayMath())
         $form.replaceWith(renderResponseForm());
-        type = "has-text-success"
     }
     else 
     {
         $('#question').replaceWith(displayMath())
         $form.replaceWith(renderResponseForm());
-        type = "has-text-danger"
     }
 }
 
@@ -69,8 +66,8 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
       firebase.database().ref().child("users").once('value', function (snapshot) {
         snapshot.forEach(function(childSnapshot) {
          if(childSnapshot.val().realID==firebaseUser.uid){
-           let scored = '<span class=' + type + '>Score: ' + childSnapshot.val().score + '</span>'
-          $('#message').html(scored) 
+           let scored = '<span>Score: ' + childSnapshot.val().score + '</span>'
+          $('#message').html('<div class="boxName">' + scored + '</div>') 
           let updates = {}
           updates['/users/' + firebaseUser.uid + '/score'] = childSnapshot.val().score + 1;
           firebase.database().ref().update(updates)
