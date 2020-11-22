@@ -1,15 +1,15 @@
-const api = `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=Raleigh&appid=baf4140c60a58e66266f45db98479516`;
+const api = `https://api.weather.gov/gridpoints/RAH/73,57/forecast`;
 
-const a = 273;
+
 
 axios.get(api)
   .then(function (response) {
-
-    document.getElementById("temperature-value").innerText = `${Math.ceil(response.data.main.temp- a)}°C`
-    document.getElementById("temperature-description").innerText = `${response.data.weather[0].description}`
-    document.getElementById("location").innerText = `${response.data.name}`
+    
+    document.getElementById("temperature-value").innerText = `${(response.data.properties.periods[0].temperature)}°F`
+    document.getElementById("temperature-description").innerText = `${response.data.properties.periods[0].detailedForecast}`
+    document.getElementById("location").innerText = `Raleigh, NC`
     var el = document.getElementById("weather-icon");
-    el.innerHTML = "<img src=\"http://openweathermap.org/img/wn/02d@2x.png\" >";
+    el.innerHTML = "<img src=\"https://api.weather.gov/icons/land/day/bkn?size=medium\" >";
     
   })
   .catch(function (error) {
