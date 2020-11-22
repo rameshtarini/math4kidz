@@ -16,7 +16,6 @@ $(function(){
         appId: "1:1035621630993:web:3b67767b4fe5792b1addb0",
         measurementId: "G-HS3V1BDPJ4"
     };
-    // Initialize Firebase
     firebase.initializeApp(config);
 
     const txtEmail = document.getElementById('txtEmail');

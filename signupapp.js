@@ -1,6 +1,3 @@
-/*import firebase from './node_modules/firebase';
-require('firebase/auth')*/
-
 $(function(){
 
     const $message = $('#message');
@@ -17,7 +14,6 @@ $(function(){
         appId: "1:1035621630993:web:3b67767b4fe5792b1addb0",
         measurementId: "G-HS3V1BDPJ4"
     };
-    // Initialize Firebase
     firebase.initializeApp(config);
 
     const txtEmail = document.getElementById('txtEmail');
@@ -79,28 +75,3 @@ $(function(){
     )
 
 }());
-
-
-
-
-                
-                /*<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
-
-                // Initialize the FirebaseUI Widget using Firebase.
-            var ui = new firebaseui.auth.AuthUI(firebase.auth());
-
-            ui.start('#firebaseui-auth-container', {
-                signInOptions: [
-                  firebase.auth.EmailAuthProvider.PROVIDER_ID
-                ],
-                // Other config options...
-              });
-
-              ui.start('#firebaseui-auth-container', {
-                signInOptions: [
-                  {
-                    provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
-                    requireDisplayName: false
-                  }
-                ]
-              });*/

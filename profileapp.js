@@ -13,7 +13,6 @@ $(function(){
         appId: "1:1035621630993:web:3b67767b4fe5792b1addb0",
         measurementId: "G-HS3V1BDPJ4"
     };
-    // Initialize Firebase
     firebase.initializeApp(config);
 
     const btnLogout = document.getElementById('btnLogout');
@@ -35,7 +34,6 @@ $(function(){
             snapshot.forEach(function(childSnapshot) {
              if(childSnapshot.val().realID==firebaseUser.uid){
                 let profile = '<h2 class="boxName">'  + childSnapshot.val().fName + ' ' + childSnapshot.val().lName + '</h2>'
-                //profile += '<div>'+ childSnapshot.val().email + '</div>'
                 profile += '<div><img src="https://img.icons8.com/cotton/64/000000/student-male--v1.png"/>Grade: ' + childSnapshot.val().realGrade + '</div>'
                 profile += '<div><img src="https://img.icons8.com/cotton/64/000000/school-backpack--v1.png"/>School: ' + childSnapshot.val().realSchool + '</div>'
                 profile += '<div><img src="https://img.icons8.com/dusk/64/000000/worldwide-location.png"/>State: ' + childSnapshot.val().realState + '</div></br></br>'

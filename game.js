@@ -1,10 +1,8 @@
-// this loads the math question to start up
 let xGlobal = 0;
 let yGlobal = 0;
 
 $(function() {
-    // Initialize Firebase
-    
+  
     const $root = $('#root');
     $('#message').append('')
 
