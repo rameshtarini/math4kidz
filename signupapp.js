@@ -26,7 +26,7 @@ $(function(){
     const lastName = document.getElementById('lastName');
     const grade = document.getElementById('grade');
     const school = document.getElementById('school');
-    const state = document.getElementById('state');
+    const state = document.getElementById('tags');
     const btnSignUp = document.getElementById('btnSignUp');
 
 
