@@ -9,7 +9,7 @@ axios.get(api)
     document.getElementById("temperature-description").innerText = `${response.data.weather[0].description}`
     document.getElementById("location").innerText = `${response.data.name}`
     var el = document.getElementById("weather-icon");
-    el.innerHTML = "<img src=\"http://openweathermap.org/img/wn/02d@2x.png\" >";
+    el.innerHTML = "<img src=\"https://openweathermap.org/img/wn/02d@2x.png\" >";
     
   })
   .catch(function (error) {
