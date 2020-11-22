@@ -28,15 +28,15 @@ $(function(){
                 profile += '<div><img src="https://img.icons8.com/cotton/64/000000/school-backpack--v1.png"/>School: ' + childSnapshot.val().realSchool + '</div>'
                 profile += '<div><img src="https://img.icons8.com/dusk/64/000000/worldwide-location.png"/>State: ' + childSnapshot.val().realState + '</div></br></br>'
                 profile += '<div class="boxName">Score: ' + (Number(childSnapshot.val().score)-1).toString() + '</div>'
-                profile += '<div>Click here to play the game and boost your score!<a href="./game.html" class="button is-primary">Game</a></div>'
+                profile += '<div >Click here to play the game and boost your score!</br><div style="display: flex;justify-content: center;align-items: center;"><a href="./game.html" class="button is-primary">Game</a></div></div>'
                 $message.html(profile) 
              }
            });
          }); 
         } else {
           let new_message = '<span class="has-text-danger">You are not logged in.</span>'
-          new_message += '<div>Click here to log in and check yourself out!<a href="./login.html" class="button is-primary">Log in</a></div>'
-          new_message += '<div>If you do not have an account, click here to make one!<a href="./signup.html" class="button is-primary">Sign up</a></div>'
+          new_message += '<div>Click here to log in and check yourself out!</br><div style="display: flex;justify-content: center;align-items: center;"><a href="./login.html" class="button is-primary"><strong>Log In</strong></a></div></div>'
+          new_message += '<div>If you do not have an account, click here to make one!</br><div style="display: flex;justify-content: center;align-items: center;"><a href="./signup.html" class="button is-primary"><strong>Sign Up</strong></a></div></div>'
           $message.html(new_message);
         }
       }
