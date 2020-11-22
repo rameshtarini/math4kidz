@@ -1,89 +1,130 @@
 <!DOCTYPE html>
+
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css" />
+        <link rel="stylesheet" href="style.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Shrikhand&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="api.js"></script>
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/8.1.1/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/8.1.1/firebase-auth.js"></script>
-    <script defer src="/__/firebase/8.1.1/firebase-database.js"></script>
-    <script defer src="/__/firebase/8.1.1/firebase-firestore.js"></script>
-    <script defer src="/__/firebase/8.1.1/firebase-functions.js"></script>
-    <script defer src="/__/firebase/8.1.1/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/8.1.1/firebase-storage.js"></script>
-    <script defer src="/__/firebase/8.1.1/firebase-analytics.js"></script>
-    <script defer src="/__/firebase/8.1.1/firebase-remote-config.js"></script>
-    <script defer src="/__/firebase/8.1.1/firebase-performance.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <title>Math4Kidz</title>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+    </head>
+    <body>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+              <a class="navbar-item" href="./index.html">
+                <img src="Images/logo2.png" height="300px" width="80px">
+              </a>
+          
+              <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>
+          
+            <div id="navbarBasicExample" class="navbar-menu">
+              <div class="navbar-start">
+                <a class="navbar-item">
+                  Home
+                </a>
+          
+               <a href="./profile.html" class="navbar-item">
+                 Profile
+               </a>
+          
+                
+              </div>
+          
+              <div class="navbar-end">
+                <div class="navbar-item">
+                  <div class="buttons">
+                    <a href="./signup.html" class="button is-primary">
+                      <strong>Sign Up</strong>
+                    </a>
+                    <a href="./login.html" class="button is-light">
+                      <strong>Log In</strong>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+          <section class="hero is-light is-large">
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <h1 class="title">
+                        Math4Kidz
+                    </h1>
+                    <h2 class="subtitle">
+                      Math 4 all, it's as simple as 2+2
+                    </h2>
+                </div>
+            </div>
+        </section>
+        <section class="section has-background-white">
+            <div class="container">
+                <div class="content">
+                    <div class="columns">
+                        <div class="column">
+                            <h1 class="title">Our Values</h1>
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                  <div class="flip-card-front">
+                                   <img src="Images/book.png" alt="Book Icon" style="width:300px;height:200px;"> 
+                                  </div>
+                                  <div class="flip-card-back">
+                                    <h1>A Students Potential</h1> 
+                                    <p>Here at Math4Kidz we believe that every student holds potential to achieve their goals and succeed in every stage of their life</p> 
+                                    <p>We are committed to help each and every student. We believe that they are the future</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="flip-card">
+                                <div class="flip-card-inner">
+                                  <div class="flip-card-front">
+                                   <img src="Images/chemistry.png" alt="Chemistry Icon" style="width:300px;height:200px;"> 
+                                  </div>
+                                  <div class="flip-card-back">
+                                    <h1>Respect</h1> 
+                                    <p>Treat others with care and compassion</p> 
+                                    <p>We respect the communities that we work with. We acknowledge parents and students for the work that they do</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="flip-card">
+                                <div class="flip-card-inner">
+                                  <div class="flip-card-front">
+                                   <img src="Images/desk.png" alt="Desk Icon" style="width:300px;height:200px;"> 
+                                  </div>
+                                  <div class="flip-card-back">
+                                    <h1>Discipline</h1> 
+                                    <p>Education is a discipline where students acquire character and healthy habits.</p> 
+                                   
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                       
+                        <div class="containerr" class="column">
+                          <div class="app-title"><h1 class="title">Weather</h1></div>
+                            <div class="weather-container">
+                              <div id="weather-icon"></div>
+                              <div id="temperature-value"><p class="tempvalue"></p></div>
+                              <div id="temperature-description"><p></p></div>
+                              <div id="location"><p>-</p></div>
+                            </div>
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </body>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
 </html>
