@@ -1,0 +1,25 @@
+.box {
+    width: 50%;
+	height: 500px;
+	background-color: rgb(186, 209, 219);
+	box-align: center;
+	top:10;
+    bottom: 0;
+	left: 20;
+    right: 0;
+    position: absolute;
+
+  	
+  }
+
+html {
+    background-color: rgb(224, 222, 222);
+}
+
+.boxName, .formID {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 10px;
+    position: absolute;
+}
