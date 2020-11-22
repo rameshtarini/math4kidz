@@ -1,4 +1,4 @@
-const api = `http://api.openweathermap.org/data/2.5/weather?q=Raleigh&appid=baf4140c60a58e66266f45db98479516`;
+const api = `https://api.openweathermap.org/data/2.5/weather?q=Raleigh&appid=baf4140c60a58e66266f45db98479516`;
 
 const a = 273;
 
